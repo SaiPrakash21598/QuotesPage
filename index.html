@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Quotes Page</title>
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<style>
+    body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffd0a8;
+        color: #333;
+        font-family: 'Calibri',sans-serif;
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+
+    .container {
+        text-align: center;
+        padding: 2rem;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    #quoteBtn {
+        border: none;
+        color: #fff;
+        background: #d89156;
+        font-size: 1.3rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 7px;
+        cursor: pointer;
+    }
+
+        #quoteBtn:hover {
+            color: #ffd000;
+        }
+
+    blockquote {
+        background: #f9f9f9;
+        border-left: 10px solid #fcdbbf;
+        margin: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    #quoteauthor {
+        color: #ffd000;
+    }
+</style>
+<body>
+    <div class="container">
+        <h2>Quotes by famous people</h2>
+        <button type="button" id="quoteBtn">Click here to display the quotes</button>
+        <blockquote>
+            <h2 id="quote">quote</h2>
+        </blockquote>
+        <h3 id="quoteauthor">Author of the quote</h3>
+    </div>
+
+    <script>
+        const quotes = [{
+            name: "Stephen King",
+            quote: "Get busy living or get busy dying."
+        },
+        {
+            name: "Mark Twain",
+            quote:"Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do."
+        },
+        {
+            name: "Eleanor Roosevelt",
+            quote: "Great minds discuss ideas; average minds discuss events; small minds discuss people."
+        },
+        {
+            name: "Abraham Lincoln",
+            quote: "I’m a success today because I had a friend who believed in me and I didn’t have the heart to let him down."
+        },
+        {
+            name: "Mother Teresa",
+            quote: "Let us always meet each other with smile, for the smile is the beginning of love."
+
+        },
+		{
+		    name: "Leonardo Da Vinci",
+			quote: "It had long since come to my attention that people of accomplishment rarely sat back and let things happen to them. They went out and happened to things."
+		},
+		{
+		    name: "Lao Tzu",
+			quote: "If you are depressed you are living in the past.If you are anxious you are living in the future.If you are at peace you are living in the present."
+	    },
+		{
+		    name: "Lao Tzu",
+			quote: "Nature does not hurry, yet everything is accomplished."
+	    },
+		{
+		    name: "Lao Tzu",
+			quote: "Music in the soul can be heard by the universe."
+	    }
+        ]
+
+        const quoteBtn = document.querySelector("#quoteBtn");
+        const quoteauthor = document.querySelector("#quoteauthor");
+        const quote = document.querySelector("#quote");
+
+        quoteBtn.addEventListener("click",displayquote);
+
+        function displayquote() {
+            debugger;
+            let number = Math.floor(Math.random() * quotes.length);
+            quoteauthor.innerHTML = quotes[number].name;
+            quote.innerHTML = quotes[number].quote;
+            
+        }
+    </script>
+</body>
+</html>
